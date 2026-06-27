@@ -4,19 +4,98 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ninniku.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" async defer></script>
   </head>
   <body>
-    <nav>
-      <a href="#">Главная</a>
-      <a href="#">Обо мне</a>
-      <a href="#">Контакт</a>
-      <a href="#">Safe Place</a>
+
+    <div class="transition-overlay" id="transition-overlay"></div>
+
+    <div class="glow glow--left" aria-hidden="true"></div>
+    <div class="glow glow--right" aria-hidden="true"></div>
+    <div class="glow glow--mid" aria-hidden="true"></div>
+
+    <nav class="nav" id="nav">
+      <a href="#" class="nav__logo" data-scroll="hero">ninniku.dev</a>
+      <ul class="nav__links">
+        <li><a href="#about" data-scroll="about">обо мне</a></li>
+        <li><a href="#projects" data-scroll="projects">проекты</a></li>
+        <li><a href="#contact" data-scroll="contact">контакт</a></li>
+        <li>
+          <a href="#" class="nav__secret" id="secret-btn">
+            <span class="nav__secret-dot" aria-hidden="true"></span>
+            secret
+          </a>
+        </li>
+      </ul>
     </nav>
-    <main>
-        
-    </main>
-    <footer>DESIGN BY <span>NINNIKU DESIGN</span></footer>
+
+    <section class="section section--hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">привет, я</p>
+        <h1 class="hero__name">ninniku</h1>
+        <p class="hero__tagline">Уголок в интернете, который принадлежит мне.</p>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <section class="section section--cards" id="about">
+      <div class="cards-grid">
+
+        <div class="card card--wide reveal" id="card-about">
+          <span class="card__label">обо мне</span>
+          <p class="card__text">Стреднестатистический студент СахГУ.</p>
+        </div>
+
+        <div class="card reveal" id="card-work" style="--delay: 0.08s">
+          <span class="card__label">чем занимаюсь</span>
+          <p class="card__text">Профессионально перерабатываю кислород в углекислый газ.</p>
+        </div>
+
+        <div class="card reveal" id="card-projects" style="--delay: 0.16s">
+          <span class="card__label" id="projects">проекты</span>
+          <ul class="card__list">
+            <li><a href="#" class="card__link">ninniku.dev</a> — этот сайт</li>
+            <li><a href="#" class="card__link">Secret</a> — личное пространство</li>
+            <li><a href="#" class="card__link">···</a></li>
+          </ul>
+        </div>
+
+        <div class="card reveal" id="card-now" style="--delay: 0.24s">
+          <span class="card__label">сейчас</span>
+          <div class="now__time" id="now-time">--:--:--</div>
+          <div class="now__weather" id="now-weather">
+            <span class="now__weather-icon" id="now-icon">·</span>
+            <span class="now__weather-text" id="now-desc">загрузка погоды…</span>
+          </div>
+          <div class="now__temp" id="now-temp"></div>
+          <p class="card__meta" id="now-location">Южно-Сахалинск</p>
+        </div>
+
+        <div class="card card--contact reveal" id="contact" style="--delay: 0.32s">
+          <span class="card__label">контакт</span>
+          <p class="card__text">Если хочешь написать — найди меня здесь.</p>
+          <div class="contact__links">
+            <a href="https://https://github.com/ninn1ku" target="_blank" rel="noopener" class="contact__link">
+              <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://t.me/lovemyanxiety" target="_blank" rel="noopener" class="contact__link">
+              <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 4.5 2.5 11l7 2.5m12-9L17 21.5l-7.5-8m12-9L9.5 13.5m0 0V21.5"/></svg>
+              Telegram
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">DESIGN BY <span>NINNIKU DESIGN</span></footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
